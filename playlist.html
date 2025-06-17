@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa Playlist</title>
+  <link rel="stylesheet" href="playlist.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-overlay"></div>
+
+  <header>
+    <h1 class="title">Nossa Playlist 🎵</h1>
+    <p class="subtitle">🎶 As músicas que marcam nossa história 🎶</p>
+    <a href="index.html" class="back-home">🏠 Voltar para Home</a>
+  </header>
+
+  <main class="playlist-container">
+    <div class="playlist-info">
+      <img id="playlist-cover" src="" alt="Capa da Playlist" class="playlist-cover">
+      <div class="playlist-details">
+        <h2 id="playlist-name">Carregando...</h2>
+        <p><strong>Total de músicas:</strong> <span id="totalMusicas">...</span></p>
+        <p><strong>Escolhidas por Luckas:</strong> <span id="luckasCount">...</span></p>
+        <p><strong>Escolhidas por Anna:</strong> <span id="annaCount">...</span></p>
+        <p><a href="https://open.spotify.com/playlist/1Et4Sw15Fcc76LDmCx4o9e?si=b5870eb123654ea5" target="_blank" class="playlist">Link para a Playlist</a></p>
+      </div>
+    </div>
+
+    <!-- Lista de Músicas -->
+    <div class="music-list-section">
+      <h3>Lista de Músicas:</h3>
+      <ul id="musicList" class="music-list">
+        <!-- Preenchido dinamicamente -->
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>Feito com 💖 por Luckas para Anna 💖 | &copy; 2025</p>
+  </footer>
+
+  <!-- Bonequinhos nos cantos -->
+  <div class="corner-character top-left">
+    <img src="images/landing/hello-kitty.png" alt="Personagem 1">
+  </div>
+  <div class="corner-character top-right">
+    <img src="images/landing/spider-man.png" alt="Personagem 2">
+  </div>
+  <div class="corner-character bottom-left">
+    <img src="images/landing/chimmy.png" alt="Personagem 3">
+  </div>
+  <div class="corner-character bottom-right">
+    <img src="images/landing/Snoopy.png" alt="Personagem 4">
+  </div>
+
+  <script src="playlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo suave com efeito visual */
+body {
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(to bottom right, #ffe4ec, #fff0f5);
+  color: #4d2c3d;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Overlay para coraçõezinhos flutuando futuramente */
+.background-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('images/hearts-bg.png') repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: 'Pacifico', cursive;
+  color: #e91e63;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Carrossel */
+.carousel {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  position: relative;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-content div {
+  min-width: 100%;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: 'Great Vibes', cursive;
+  color: #b71c1c;
+}
+
+/* Botão do coração */
+.love-message {
+  text-align: center;
+  margin: 2rem 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.heart-button {
+  background: #ff80ab;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Dancing Script', cursive;
+}
+
+.heart-button:hover {
+  background: #f50057;
+}
+
+.love-phrase {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #d81b60;
+  font-weight: bold;
+  animation: fadeIn 1s ease forwards;
+  display: none;
+}
+
+.love-phrase.visible {
+  display: block;
+}
+
+/* Botões da navegação */
+.nav-buttons {
+  text-align: center;
+  margin: 3rem 1rem;
+}
+
+.nav-buttons h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #880e4f;
+}
+
+.buttons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffb6c1;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Dancing Script', cursive;
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: pulse 2s infinite;
+}
+
+.menu-button:hover {
+  background: #f06292;
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 15px #f06292, 0 0 25px #f06292;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #7b1fa2;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(240, 98, 146, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(240, 98, 146, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(240, 98, 146, 0.7);
+  }
+}
+
+.corner-character {
+  position: fixed;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+/* Tamanhos ajustados */
+.corner-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.corner-character:hover {
+  transform: scale(1.2);
+}
+
+/* Posições e tamanhos individuais */
+.top-left {
+  top: 10px;
+  left: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
+  width: 120px;
+  height: 120px}
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .buttons-grid {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .menu-button {
+    width: 90px;
+    height: 90px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .buttons-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .menu-button {
+    width: 70px;
+    height: 70px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .buttons-grid {
+    gap: 8px;
+  }
+
+  .menu-button {
+    width: 60px;
+    height: 60px;
+    font-size: 0.75rem;
+  }
+}

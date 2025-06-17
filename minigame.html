@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Games do Amor 💘</title>
+  <link rel="stylesheet" href="minigame.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>Mini Games do Amor 💖</h1>
+    <p>Vamos brincar e testar o quanto nos conhecemos?</p>
+    <a href="index.html" class="back-home">🏠 Voltar para Home</a>
+  </header>
+
+  <main>
+
+    <!-- Jogo da Memória -->
+    <section class="game-section" id="memory-game-section">
+      <h2>🧠 Jogo da Memória</h2>
+      <div id="memory-board" class="memory-board"></div>
+      <button id="reset-memory">🔄 Recomeçar</button>
+    </section>
+
+    <!-- Monte sua Declaração -->
+    <section class="game-section" id="build-declaration-section">
+      <h2>💌 Monte Sua Declaração</h2>
+      <p>Arraste as palavras para formar uma linda frase!</p>
+      <div id="declaration-pool" class="declaration-pool"></div>
+      <div id="declaration-target" class="declaration-target" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p class="placeholder">Arraste para cá!</p>
+      </div>
+      <button id="clear-declaration">🧽 Limpar</button>
+    </section>
+
+    <section class="game-section">
+        <div class="minigame-section" id="safe-game">
+        <h2>🔐 Desbloqueie o Cofre do Amor</h2>
+        <div class="safe-container">
+            <input type="password" maxlength="4" placeholder="Digite a senha..." id="safe-input">
+            <div id="safe-hints" class="safe-hints"></div>
+            <button id="unlock-safe">Abrir Cofre</button>
+            <div class="safe-door closed" id="safe-door"></div>
+            <div id="safe-reward" class="hidden">
+                <h3>🎁 Você encontrou:</h3>
+                <ul id="safe-reward-list"></ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Roleta do Amor -->
+    <section class="game-section" id="love-wheel-section">
+      <h2>🎡 Roleta do Amor</h2>
+      <div class="wheel-container">
+        <div id="wheel" class="wheel"></div>
+        <button id="spin-btn">🎯 Girar</button>
+      </div>
+      <div id="result-display" class="result-display"></div>
+    </section>
+
+    <div class="corner-character top-left">
+        <img src="images/landing/hello-kitty.png" alt="Personagem 1">
+    </div>
+    <div class="corner-character top-right">
+        <img src="images/landing/spider-man.png" alt="Personagem 2">
+    </div>
+    <div class="corner-character bottom-left">
+        <img src="images/landing/chimmy.png" alt="Personagem 3">
+    </div>
+    <div class="corner-character bottom-right">
+        <img src="images/landing/Snoopy.png" alt="Personagem 4">
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Feito com 💖 por Luckas para Anna 💖 | &copy; 2025</p>
+  </footer>
+
+  <script src="minigame.js"></script>
+</body>
+</html>

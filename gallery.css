@@ -1,0 +1,247 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(to bottom right, #fff0f5, #ffe4ec);
+  color: #4d2c3d;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background-overlay {
+  position: fixed; /* imagino que seja fixed ou absolute */
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none; /* importante: libera os cliques para elementos atrás */
+  z-index: 0; /* garante que fique atrás dos elementos clicáveis */
+}
+
+.background-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('images/hearts-bg.png') repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: 'Great Vibes', cursive;
+  color: #e91e63;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.gallery-container {
+  width: 100%;
+  padding: 2rem 1rem;
+  overflow-x: auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.tape-frame {
+  background: url('images/tape-frame.png') repeat-x;
+  background-size: cover;
+  padding: 2rem 0;
+  width: 100%;
+  overflow: hidden;
+  animation: moveTape 60s linear infinite;
+}
+
+.gallery-scroll {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+  animation: scrollGallery 60s linear infinite;
+}
+
+.gallery-scroll img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease;
+}
+
+.gallery-scroll img:hover {
+  transform: scale(1.1);
+}
+
+.back-home-wrapper {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: #d12c7a;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.back-home:hover {
+  background-color: #b12565;
+}
+
+.corner-character {
+  position: fixed;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+/* Tamanhos ajustados */
+.corner-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.corner-character:hover {
+  transform: scale(1.2);
+}
+
+/* Posições e tamanhos individuais */
+.top-left {
+  top: 10px;
+  left: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
+  width: 120px;
+  height: 120px}
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #7b1fa2;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes scrollGallery {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes moveTape {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .gallery-scroll img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .corner-character {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  .gallery-scroll img {
+    width: 130px;
+    height: 130px;
+    border-radius: 12px;
+  }
+
+  .gallery-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .corner-character {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tape-frame {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .gallery-scroll {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .gallery-scroll img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .corner-character {
+    width: 50px;
+    height: 50px;
+  }
+
+  .back-home {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
